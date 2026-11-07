@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.3 — 2026-11-07
+
+### Fixed
+- `/slang` 无参数时的用法提示改用 success 类型返回（部分 UI 对 error 结果渲染隐蔽，表现为"没有任何输出"）。
+- `/slang` handler 整体包 try/catch：任何意外异常都转成可见的文本结果，绝不静默。
+
 ## 0.3.2 — 2026-11-07
 
 ### Changed
