@@ -106,4 +106,12 @@ if (!miss.includes("3060")) throw new Error("RTX 4060 应推荐到 3060 相关�
 const gibberish = lookup(concepts, "qqqzzz");
 if (gibberish.includes("相近词条")) throw new Error("完全无关联的词不应有推荐");
 
+// --- 方向判断（斜杠命令的调度依据）---
+const { findExactByVariant } = await import("./lib/lookup.js");
+if (!findExactByVariant(concepts, "绿泡泡")) throw new Error("绿泡泡应被识别为黑话变体");
+if (!findExactByVariant(concepts, "猛男捡树枝")) throw new Error("猛男捡树枝应被识别为黑话变体");
+if (findExactByVariant(concepts, "茅台")) throw new Error("茅台是标准名不是变体，不应命中");
+if (findExactByVariant(concepts, "")) throw new Error("空输入不应命中");
+console.log("[dispatch] findExactByVariant OK");
+
 console.log("\n[test] 全部通过 ✅");

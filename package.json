@@ -1,6 +1,6 @@
 {
   "name": "dsh-secondhand-slang",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -27,6 +27,8 @@
   ],
   "peerDependencies": {
     "@deepseek-ai/dsh-tools": ">=0.2.1-rc.2",
+    "@deepseek-ai/dsh-commands": ">=0.2.1-rc.2",
+    "@deepseek-ai/dsh-system-prompt": ">=0.2.1-rc.2",
     "@deepseek-ai/dsh-home-paths": ">=0.2.1-rc.2"
   },
   "peerDependenciesMeta": {
@@ -34,6 +36,12 @@
       "optional": true
     },
     "@deepseek-ai/dsh-home-paths": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-commands": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-system-prompt": {
       "optional": true
     }
   },
