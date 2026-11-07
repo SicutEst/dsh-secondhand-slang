@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 — 2026-11-07
+
+### Fixed
+- `engines.dsh` 改为按版本元组的 OR 链（`>=0.2.1-rc.2 || >=0.2.2-rc.0 || …`）：修复 DSH 夜版（nightly rc 通道）升级到 0.2.2-rc.1 及以后时插件被 semver 预发布规则拒装的问题（同 dsh-context 的声明方式）。
+
+### Added
+- 插件本体版本自检：`/slang update` 与每周自动检查时会对比 GitHub 最新 Release，发现新版本即提示一条可直接复制的更新命令。
+
 ## 0.3.0 — 2026-11-07
 
 ### Added

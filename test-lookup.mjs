@@ -114,4 +114,25 @@ if (findExactByVariant(concepts, "茅台")) throw new Error("茅台是标准名�
 if (findExactByVariant(concepts, "")) throw new Error("空输入不应命中");
 console.log("[dispatch] findExactByVariant OK");
 
+// --- 版本比较与 Release 自检 ---
+const { compareVersions, fetchLatestPluginRelease } = await import("./lib/updater.js");
+if (!(compareVersions("0.3.1", "0.3.0") > 0)) throw new Error("0.3.1 应大于 0.3.0");
+if (!(compareVersions("0.3.0", "0.3.0-rc.1") > 0)) throw new Error("正式版应大于同号 rc");
+if (!(compareVersions("0.10.0", "0.9.9") > 0)) throw new Error("0.10.0 应大于 0.9.9");
+if (compareVersions("garbage", "0.3.0") !== 0) throw new Error("无法解析时应返回 0（保守不提示）");
+const relMock = {
+  ok: true,
+  arrayBuffer: async () => enc({
+    tag_name: "v9.9.9",
+    html_url: "https://github.com/SicutEst/dsh-secondhand-slang/releases/tag/v9.9.9",
+    assets: [{ name: "dsh-secondhand-slang-9.9.9.tgz", browser_download_url: "https://example.com/x.tgz" }],
+  }).buffer,
+};
+const rel = await fetchLatestPluginRelease(() => Promise.resolve(relMock));
+if (rel.version !== "9.9.9" || rel.assetUrl !== "https://example.com/x.tgz") throw new Error("Release 解析不对");
+let relErr = null;
+try { await fetchLatestPluginRelease(() => Promise.resolve({ ok: true, arrayBuffer: async () => enc({ tag_name: "junk" }).buffer })); } catch (e) { relErr = e; }
+if (!relErr) throw new Error("坏 tag 应抛错");
+console.log("[version] compareVersions / fetchLatestPluginRelease OK");
+
 console.log("\n[test] 全部通过 ✅");
