@@ -97,4 +97,13 @@ if (rt.concepts.length !== 1 || rt.concepts[0].name !== "iPhone") throw new Erro
 rmSync(tmp, { recursive: true, force: true });
 console.log("[storage] 损坏容错与读写回环 OK");
 
+// --- 未命中时的相近词条推荐 ---
+const miss = lookup(concepts, "RTX 4060");
+console.log("\n=== miss 推荐示例（RTX 4060）===");
+console.log(miss.split("\n").slice(0, 7).join("\n"));
+if (!miss.includes("相近词条")) throw new Error("未命中时应给出相近词条推荐");
+if (!miss.includes("3060")) throw new Error("RTX 4060 应推荐到 3060 相关词条");
+const gibberish = lookup(concepts, "qqqzzz");
+if (gibberish.includes("相近词条")) throw new Error("完全无关联的词不应有推荐");
+
 console.log("\n[test] 全部通过 ✅");
