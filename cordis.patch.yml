@@ -1,0 +1,4 @@
+# dsh-secondhand-slang · bundle patch（由 dsh.profile.bundles 自动应用）
+- insert:
+    - id: secondhand-slang
+      name: 'dsh-secondhand-slang'

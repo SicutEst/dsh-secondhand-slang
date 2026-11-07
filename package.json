@@ -1,0 +1,49 @@
+{
+  "name": "dsh-secondhand-slang",
+  "version": "0.2.2",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Offline secondhand-marketplace slang dictionary for DeepSeek Harness: look up coded terms (黑话), decode them back, and self-update from upstream MIT repos. Lookups work with zero network.",
+  "main": "lib/index.js",
+  "author": "SicutEst",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SicutEst/dsh-secondhand-slang.git"
+  },
+  "homepage": "https://github.com/SicutEst/dsh-secondhand-slang#readme",
+  "bugs": {
+    "url": "https://github.com/SicutEst/dsh-secondhand-slang/issues"
+  },
+  "engines": {
+    "dsh": "0.2.1-rc.2 || 0.2.1-rc.3 || 0.2.1-rc.4 || 0.2.1-rc.5"
+  },
+  "files": [
+    "lib",
+    "data",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.2 || 0.2.1-rc.3 || 0.2.1-rc.4 || 0.2.1-rc.5",
+    "@deepseek-ai/dsh-home-paths": "0.2.1-rc.2 || 0.2.1-rc.3 || 0.2.1-rc.4 || 0.2.1-rc.5"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-home-paths": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "meta": {
+      "title": "二手黑话词典",
+      "description": "离线查询闲鱼等二手平台的黑话暗号：slang_lookup 正向查叫法，slang_decode 反向解含义，slang_update 自动/手动更新词典。查询零网络请求。"
+    }
+  }
+}

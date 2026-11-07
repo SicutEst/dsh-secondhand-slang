@@ -1,0 +1,34 @@
+MIT License
+
+Copyright (c) 2026 SicutEst
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---------------------------------------------------------------------------
+Third-party data notice:
+
+The bundled dictionary data in data/ comes from the following MIT-licensed
+projects; their license texts / attribution statements are included verbatim:
+
+- data/LICENSE-xianyu-slang-helper.txt
+  from https://github.com/memos-im/xianyu-slang-helper (MIT per its README)
+
+- data/LICENSE-awesome-chinese-secondhand-slang.txt
+  from https://github.com/Domainsun/awesome-chinese-secondhand-slang (MIT)
+---------------------------------------------------------------------------

@@ -1,0 +1,17 @@
+xianyu-slang-helper — 词典数据来源说明与许可声明
+=================================================
+
+本插件随包分发的 data/dictionary.source.json 取自以下仓库：
+
+    https://github.com/memos-im/xianyu-slang-helper
+
+该仓库 README 中声明其许可证为 MIT（原文段落标题 "License MIT"）。
+截至 2026-11-07，该仓库根目录没有独立的 LICENSE 文件，package.json
+中亦无 license 字段；本文件按其 README 声明进行署名分发。若上游后续
+补充正式 LICENSE 文件，以官方文本为准。
+
+词典数据本身的来源（据该仓库 README）：知乎、Linux.do、X/Twitter、
+谷圈科普文、search-sharp.com 社区众包（经质量与政策过滤）等公开内容，
+其中违法题材词条已在源头被排除。
+
+上游仓库：https://github.com/memos-im/xianyu-slang-helper
